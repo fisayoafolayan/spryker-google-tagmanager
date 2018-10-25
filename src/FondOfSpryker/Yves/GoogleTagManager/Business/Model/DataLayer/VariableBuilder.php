@@ -73,7 +73,7 @@ class VariableBuilder implements VariableBuilderInterface
     }
 
     /**
-     * @param Generated\Shared\Transfer\StorageProductTransfer $product
+     * @param \Generated\Shared\Transfer\StorageProductTransfer $product
      *
      * @return array
      */
@@ -215,11 +215,12 @@ class VariableBuilder implements VariableBuilderInterface
             'transactionCurrency' => $orderTransfer->getCurrencyIsoCode(),
             'transactionProducts' => $transactionProducts,
             'transactionProductsSkus' => $transactionProductsSkus,
+            'customerEmail' => $orderTransfer->getBillingAddress()->getEmail(),
         ];
     }
 
     /**
-     * @param Generated\Shared\Transfer\ItemTransfer $product
+     * @param \Generated\Shared\Transfer\ItemTransfer $product
      *
      * @return array
      */
